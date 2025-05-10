@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F0F0F0">
+
+    <!-- 目标矩形区域 -->
+    <View
+        android:id="@+id/target_rect"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="16dp"
+        android:layout_gravity="bottom|end"
+        android:background="#FF5722"/>
+
+    <!-- 可拖动小球的自定义View -->
+    <com.example.work3.DraggableBallView
+        android:id="@+id/ball"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</FrameLayout>

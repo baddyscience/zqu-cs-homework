@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 颜色选择工具栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="#EEEEEE">
+
+        <ImageButton
+            android:id="@+id/btn_red"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="#FF0000"
+            android:contentDescription="红色画笔"/>
+
+        <ImageButton
+            android:id="@+id/btn_blue"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="#0000FF"
+            android:layout_marginStart="16dp"
+            android:contentDescription="蓝色画笔"/>
+
+        <ImageButton
+            android:id="@+id/btn_green"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="#00FF00"
+            android:layout_marginStart="16dp"
+            android:contentDescription="绿色画笔"/>
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="清除"
+            android:layout_marginStart="32dp"
+            android:paddingHorizontal="16dp"/>
+    </LinearLayout>
+
+    <!-- 自定义绘图视图 -->
+    <com.example.work4.DrawingView
+        android:id="@+id/drawing_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
