@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .calculator {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input {
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="calculator">
+    <h2>BMI 计算器</h2>
+    <input type="number" id="height" placeholder="身高（米）" step="0.01">
+    <input type="number" id="weight" placeholder="体重（千克）" step="0.1">
+    <button onclick="calculateBMI()">计算 BMI</button>
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculateBMI() {
+        const height = parseFloat(document.getElementById('height').value);
+        const weight = parseFloat(document.getElementById('weight').value);
+
+        if (!height || !weight || height <= 0 || weight <= 0) {
+            showResult("请输入有效的数值！", "#ff4444");
+            return;
+        }
+
+        const bmi = weight / (height * height);
+        showResultWithColor(bmi);
+    }
+
+    function showResultWithColor(bmi) {
+        const resultDiv = document.getElementById('result');
+        const category = getBMICategory(bmi);
+
+        resultDiv.innerHTML = `
+            <p style="font-size: 20px; margin: 5px 0;">BMI 值: <strong>${bmi.toFixed(1)}</strong></p>
+            <p style="color: ${category.color}; font-weight: bold;">${category.status}</p>
+        `;
+        resultDiv.style.backgroundColor = category.background;
+    }
+
+    function getBMICategory(bmi) {
+        if (bmi < 18.5) return {
+            status: "体重过轻",
+            color: "#2196F3",
+            background: "#e3f2fd"
+        };
+        if (bmi < 24) return {
+            status: "正常范围",
+            color: "#4CAF50",
+            background: "#e8f5e9"
+        };
+        if (bmi < 28) return {
+            status: "体重过重",
+            color: "#FF9800",
+            background: "#fff3e0"
+        };
+        return {
+            status: "肥胖",
+            color: "#f44336",
+            background: "#ffebee"
+        };
+    }
+</script>
+</body>
+</html>

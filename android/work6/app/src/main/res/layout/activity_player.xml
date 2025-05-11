@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#000000">
+
+        <Button
+            android:id="@+id/btnBrowse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="添加音乐"
+            android:textColor="#FFFFFF"/>
+
+        <Button
+            android:id="@+id/btnExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="退出"
+            android:textColor="#FFFFFF"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <SeekBar
+        android:id="@+id/songProgress"
+        style="@style/Widget.AppCompat.SeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progressDrawable="@drawable/progress_bar"
+        android:thumb="@drawable/ic_progress_thumb" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/songProgress"
+        android:padding="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/currentTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:text="0:00"/>
+
+        <TextView
+            android:id="@+id/totalTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#FFFFFF"
+            android:textAlignment="textEnd"
+            android:text="0:00"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/playlist"
+        android:layout_width="200dp"
+        android:layout_height="400dp"
+        android:layout_below="@id/currentTime"
+        android:background="#212121"
+        android:choiceMode="singleChoice"
+        tools:ignore="NotSibling" />
+
+    <SurfaceView
+        android:id="@+id/visualizerView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_toEndOf="@id/playlist"
+        android:layout_below="@id/currentTime"
+        tools:ignore="NotSibling" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/btnRepeat"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_repeat_off"
+            app:tint="#FFFFFF" />
+
+        <ImageButton
+            android:id="@+id/btnPrev"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_skip_previous"
+            app:tint="#FFFFFF" />
+
+        <ImageButton
+            android:id="@+id/btnPlay"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/ic_play"
+            app:tint="#FFFFFF" />
+
+        <ImageButton
+            android:id="@+id/btnNext"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_skip_next"
+            app:tint="#FFFFFF" />
+
+    </LinearLayout>
+
+</RelativeLayout>
