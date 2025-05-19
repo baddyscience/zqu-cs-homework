@@ -1,0 +1,68 @@
+﻿<!-- HTML -->
+<nav class="navbar-responsive">
+    <div class="logo">Logo</div>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">首页</a></li>
+        <li><a href="#about">关于</a></li>
+        <li><a href="#services">服务</a></li>
+        <li><a href="#contact">联系</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+</nav>
+
+<!-- CSS + JS -->
+<style>
+    .navbar-responsive {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        background: #f8f9fa;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+    }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+        }
+
+    .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: #f8f9fa;
+            flex-direction: column;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+    }
+</style>
+
+<script>
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('active');
+}
+</script>
