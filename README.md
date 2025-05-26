@@ -2,7 +2,9 @@
 
 Baddyscience's learning repository, a record of completed school works and some simple algorithmic exercises - mainly from leetcode and luogu.
 
-如果帮到了你，点个收藏叭 :)
+如果帮到了你，点个star叭 :)
+
+Ciallo~
 
 ## AI
 
@@ -18,7 +20,7 @@ Baddyscience's learning repository, a record of completed school works and some 
 
 - use *AndroidStudio* *java*
 
-- five works in docx
+- ten works in docx
 
 
 ## cppStudy
@@ -35,7 +37,7 @@ Baddyscience's learning repository, a record of completed school works and some 
 - Includes a practice project ‘Pokemon’ and will soon include related school assignments
   - ‘Pokemon’ Using the *interllij* system provided by *IDEA*, some of the basics including polymorphism were applied
 - Part of the code is commented  *((PS: what's not there won't be added) PS's PS: as usual)* :)
-- 不怕方sir双杀你就cv :(
+-  ~~不怕方sir双杀你就cv :(~~
 
 
 ## operatingSystem
@@ -61,6 +63,11 @@ Baddyscience's learning repository, a record of completed school works and some 
 
 - use Vu5(MDK534,Keil.STM32F1xx_DFP.2.4.0)
 - use stm32F103RB Xtal 8.00
+
+## web
+
+- use VS2022 webform frame、C#
+- Contains a course design project "Information Dissemination System"
 
 ## SQL
 
