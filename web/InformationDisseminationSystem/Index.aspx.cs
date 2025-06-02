@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Collections.Generic;
+using System.Web;
 
 namespace WebInfoSystem
 {
@@ -91,6 +92,13 @@ namespace WebInfoSystem
                 da.Fill(dt);
             }
             return dt;
+        }
+
+        protected string FormatContent(object content)
+        {
+            return HttpUtility.HtmlEncode(content.ToString())
+                              .Replace("\n", "<br/>")
+                              .Replace(" ", "&nbsp;");
         }
     }
 }

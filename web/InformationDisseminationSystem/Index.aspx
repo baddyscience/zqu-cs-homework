@@ -5,6 +5,10 @@
     <title>信息浏览 | 漫游篝火</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
+        .preserve-line-breaks {
+        white-space: pre-line; 
+         }
+
         body {
             background: #f8f9fa;
         }
@@ -63,7 +67,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><%# Eval("Title") %></h5>
                                     <p class="card-subtitle mb-2 text-muted">栏目：<%# Eval("CategoryName") %></p>
-                                    <p class="card-text"><%# Eval("Content") %></p>
+                                    <p class="card-text preserve-line-breaks"><%# Eval("Content") %></p>
                                     <a href='CommentSubmit.aspx?postid=<%# Eval("PostID") %>' class="btn btn-outline-primary btn-sm">我要留言</a>
 
                                     <asp:Repeater ID="rptComments" runat="server" DataSource='<%# GetComments(Eval("PostID")) %>'>
@@ -74,7 +78,7 @@
                                         <ItemTemplate>
                                             <div class="p-2 my-2 rounded comment-box">
                                                 <strong class="text-dark"><%# Eval("Username") %>:</strong>
-                                                <p class="mb-1"><%# Eval("Content") %></p>
+                                                <p class="mb-1 preserve-line-breaks"><%# Eval("Content") %></p>
                                             </div>
                                         </ItemTemplate>
                                     </asp:Repeater>
